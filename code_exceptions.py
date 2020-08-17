@@ -1,0 +1,2 @@
+class LanguageNotFoundException(Exception):
+    pass
