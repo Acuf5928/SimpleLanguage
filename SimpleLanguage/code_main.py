@@ -16,6 +16,11 @@ class SimpleLanguage:
     def changeDefaultLanguage(self, newDefaultLanguage: str):
         self.defaultLanguage = newDefaultLanguage
 
+    def changeDatabase(self, newDatabase: str):
+        self.databasePath = newDatabase
+        self.reloadDatabases()
+        # TODO: TEST
+
     def reloadDatabases(self):
         self.strings = LoadDatabaseList(foundDatabasesList(self.databasePath))
         # TODO: TEST, how?
