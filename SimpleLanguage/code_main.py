@@ -1,5 +1,5 @@
-from code_exceptions import LanguageNotFoundException
-from code_helper import LoadDatabaseList, foundDatabasesList
+from SimpleLanguage.code_exceptions import LanguageNotFoundException
+from SimpleLanguage.code_helper import LoadDatabaseList, foundDatabasesList
 
 
 class SimpleLanguage:

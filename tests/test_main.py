@@ -1,7 +1,7 @@
 import unittest
 
-from code_exceptions import LanguageNotFoundException
-from code_main import SimpleLanguage
+from SimpleLanguage.code_main import SimpleLanguage
+from SimpleLanguage.code_exceptions import LanguageNotFoundException
 
 
 class TestSimpleLanguage(unittest.TestCase):
