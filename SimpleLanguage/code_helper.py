@@ -21,7 +21,9 @@ def LoadDatabaseList(databasesList: List[str]) -> dict:
             with open(element, "r") as read_file:
                 data[name] = json.load(read_file)
         except IOError:
-            raise DatabaseNotFoundException("")
+            raise DatabaseNotFoundException("Database not exist or is not readable")
+        except Exception:
+            raise DatabaseNotFoundException("Database is damaged")
 
     return data
 
