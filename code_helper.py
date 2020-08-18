@@ -4,7 +4,7 @@ from typing import List
 
 
 def foundDatabasesList(basePath: str) -> List[str]:
-    if basePath[-1] is not "\\" and basePath[-1] is not "/":
+    if basePath[-1] != "\\" and basePath[-1] != "/":
         basePath = basePath + "/"
     return glob(basePath + ".*", recursive=False)
 
@@ -17,6 +17,8 @@ def LoadDatabaseList(databasesList: List[str]) -> dict:
 
         with open(element, "r") as read_file:
             data[name] = json.load(read_file)
+
+    return data
 
 
 def foundSystemLanguage():

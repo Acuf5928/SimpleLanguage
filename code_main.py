@@ -3,7 +3,7 @@ from code_helper import LoadDatabaseList, foundDatabasesList
 
 
 class SimpleLanguage:
-    def __init__(self, databasePath: str = "eng", actualLanguage: str = "eng", defaultLanguage: str = ".\\language\\"):
+    def __init__(self, defaultLanguage: str = "eng", actualLanguage: str = "eng", databasePath: str = ".\\language\\"):
         self.actualLanguage = actualLanguage
         self.databasePath = databasePath
         self.defaultLanguage = defaultLanguage
@@ -18,7 +18,7 @@ class SimpleLanguage:
 
     def reloadDatabases(self):
         self.strings = LoadDatabaseList(foundDatabasesList(self.databasePath))
-        # TODO: TEST
+        # TODO: TEST, how?
 
     def rString(self, key: str, language: str = None) -> str:
         try:
@@ -32,5 +32,3 @@ class SimpleLanguage:
                 return self.strings[self.defaultLanguage][key]
             except KeyError:
                 raise LanguageNotFoundException("This language or this strings is not in our database")
-        # TODO: TEST
-
