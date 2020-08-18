@@ -8,7 +8,7 @@ from SimpleLanguage.code_exceptions import DatabaseNotFoundException
 def foundDatabasesList(basePath: str) -> List[str]:
     if basePath[-1] != "\\" and basePath[-1] != "/":
         basePath = basePath + "/"
-    return glob(basePath + ".*", recursive=False)
+    return glob(basePath + "*.json", recursive=False)
 
 
 def LoadDatabaseList(databasesList: List[str]) -> dict:
