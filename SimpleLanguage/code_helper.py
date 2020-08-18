@@ -2,6 +2,8 @@ import json
 from glob import glob
 from typing import List
 
+from SimpleLanguage.code_exceptions import DatabaseNotFoundException
+
 
 def foundDatabasesList(basePath: str) -> List[str]:
     if basePath[-1] != "\\" and basePath[-1] != "/":
@@ -15,8 +17,11 @@ def LoadDatabaseList(databasesList: List[str]) -> dict:
     for element in databasesList:
         name = element.split("\\")[-1].split(".")[0]
 
-        with open(element, "r") as read_file:
-            data[name] = json.load(read_file)
+        try:
+            with open(element, "r") as read_file:
+                data[name] = json.load(read_file)
+        except IOError:
+            raise DatabaseNotFoundException("")
 
     return data
 
