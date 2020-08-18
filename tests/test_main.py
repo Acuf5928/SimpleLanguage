@@ -1,6 +1,6 @@
 import unittest
 
-from SimpleLanguage.code_main import SimpleLanguage
+import SimpleLanguage
 from SimpleLanguage.code_exceptions import LanguageNotFoundException
 
 
@@ -8,7 +8,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_init_with_out_value(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Assert
         self.assertEqual(toTest.defaultLanguage, "eng")
@@ -18,28 +18,28 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_init_with_databasePath(self):
         # Create object to test
-        toTest = SimpleLanguage(databasePath="test")
+        toTest = SimpleLanguage.init(databasePath="test")
 
         # Assert
         self.assertEqual(toTest.databasePath, "test")
 
     def test_init_with_actualLanguage(self):
         # Create object to test
-        toTest = SimpleLanguage(actualLanguage="test")
+        toTest = SimpleLanguage.init(actualLanguage="test")
 
         # Assert
         self.assertEqual(toTest.actualLanguage, "test")
 
     def test_init_with_defaultLanguage(self):
         # Create object to test
-        toTest = SimpleLanguage(defaultLanguage="test")
+        toTest = SimpleLanguage.init(defaultLanguage="test")
 
         # Assert
         self.assertEqual(toTest.defaultLanguage, "test")
 
     def test_changeLanguage(self):
         # Create object to test
-        toTest = SimpleLanguage(actualLanguage="old")
+        toTest = SimpleLanguage.init(actualLanguage="old")
 
         # Manipulates
         toTest.changeLanguage("new")
@@ -49,7 +49,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_changeDefaultLanguage(self):
         # Create object to test
-        toTest = SimpleLanguage(defaultLanguage="old")
+        toTest = SimpleLanguage.init(defaultLanguage="old")
 
         # Manipulates
         toTest.changeDefaultLanguage("new")
@@ -59,7 +59,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_rString1(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Manipulates
         toTest.strings = {"eng": {"string1": "result1eng"}, "ita": {"string1": "result1ita"}}
@@ -69,7 +69,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_rString2(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Manipulates
         toTest.strings = {"eng": {"string1": "result1eng"}, "ita": {"string1": "result1ita"}}
@@ -80,7 +80,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_rString3(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Manipulates
         toTest.strings = {"eng": {"string1": "result1eng"}}
@@ -91,7 +91,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_rString4(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Manipulates
         toTest.strings = {"eng": {"string1": "result1eng"}, "ita": {"string1": "result1ita"}}
@@ -101,7 +101,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_rString5(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Manipulates
         toTest.strings = {"eng": {"string1": "result1eng"}, "ita": {"string1": "result1ita"}}
@@ -113,7 +113,7 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_rString6(self):
         # Create object to test
-        toTest = SimpleLanguage()
+        toTest = SimpleLanguage.init()
 
         # Manipulates
         toTest.strings = {"eng": {"string1": "result1eng"}, "ita": {"string1": "result1ita"}}
