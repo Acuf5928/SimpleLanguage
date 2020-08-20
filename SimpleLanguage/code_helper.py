@@ -6,6 +6,14 @@ from SimpleLanguage.code_exceptions import DatabaseNotFoundException
 
 
 def foundDatabasesList(basePath: str) -> List[str]:
+    """
+    return a list of all path of all files .json in a folder (excluding sub folder)
+
+    :param basePath: Path of the folder where you want search the files
+    :rtype: List[str]
+    :return: List of all path of all files .json in a folder (excluding sub folder)
+    """
+
     if basePath[-1] != "\\" and basePath[-1] != "/":
         basePath = basePath + "/"
     return glob(basePath + "*.json", recursive=False)
