@@ -8,6 +8,4 @@ This library was created with the aim of allowing you easily and quickly manage 
 Installation
 ------------
 
-``pip install SimpleLanguage`` (non disponibile attualmente)
-
-``pip install SimpleLanguage`` (not currently available)
+``pip install SimpleLanguage``
