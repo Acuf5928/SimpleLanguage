@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="SimpleLanguage",
-    version="0.1.0",
+    version="0.2.0",
     author="Acuf5928",
     author_email="alberto.cuffaro@hotmail.it",
     description="Multi language tool for python",
