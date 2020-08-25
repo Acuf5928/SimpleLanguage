@@ -1,4 +1,5 @@
 import json
+import os
 from glob import glob
 from typing import List
 
@@ -16,6 +17,10 @@ def foundDatabasesList(basePath: str) -> List[str]:
 
     if basePath[-1] != "\\" and basePath[-1] != "/":
         basePath = basePath + "/"
+
+    if not os.path.isdir(basePath):
+        raise DatabaseNotFoundException("Database folder not exist or is not readable")
+
     return glob(basePath + "*.json", recursive=False)
 
 

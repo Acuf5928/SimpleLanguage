@@ -1,0 +1,5 @@
+{
+  "testKey1": "Take a text from database: testResultIta",
+  "testKey2": "But if we want a single text in a different language?: testResultIta",
+  "testKey3": "If we want to change actualLanguage?: testResultIta"
+}
