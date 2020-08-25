@@ -18,10 +18,10 @@ class TestSimpleLanguage(unittest.TestCase):
 
     def test_init_with_databasePath(self):
         # Create object to test
-        toTest = SimpleLanguage.init(databasePath="test")
+        toTest = SimpleLanguage.init(databasePath=".\\test_db1\\")
 
         # Assert
-        self.assertEqual(toTest.databasePath, "test")
+        self.assertEqual(toTest.databasePath, ".\\test_db1\\")
 
     def test_init_with_actualLanguage(self):
         # Create object to test
